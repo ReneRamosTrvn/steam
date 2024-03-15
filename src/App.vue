@@ -5,10 +5,6 @@ import Topbar from "./components/Topbar.vue";
 </script>
 
 <template>
-  <header>
-    <link href="/node_modules/primeicons/primeicons.css" rel="stylesheet" />
-  </header>
-
   <div class="flex bg-slate-900">
     <div class="lg:w-1/4 hidden lg:block">
       <SideBar />
