@@ -37,6 +37,7 @@
         <div class="w-full">
           <div class="grid grid-cols-3">
             <button
+              @touchend="toggleTabs(index + 1)"
               v-for="(tab, index) in tabs"
               type="button"
               :key="index"
