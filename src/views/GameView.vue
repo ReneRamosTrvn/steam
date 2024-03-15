@@ -36,7 +36,7 @@
       <div class="flex flex-wrap border-b border-slate-400">
         <div class="w-full">
           <div class="grid grid-cols-3">
-            <a
+            <button
               v-for="(tab, index) in tabs"
               :key="index"
               class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
@@ -47,7 +47,7 @@
               }"
             >
               {{ tab }}
-            </a>
+            </button>
           </div>
           <div class="relative flex flex-col min-w-0 break-words w-full mb-6">
             <div class="lg:px-4 py-5 flex-auto">

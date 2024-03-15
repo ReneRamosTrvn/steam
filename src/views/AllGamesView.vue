@@ -2,9 +2,10 @@
   <main>
     <div class="px-6 flex mt-5">
       <input
-        class="w-full lg:w-2/3 rounded-l-full bg-slate-400 text-slate-200 px-3 py-1"
+        class="w-full lg:w-2/3 rounded-l-full bg-slate-800 text-slate-200 px-3 py-1"
         v-model="game"
         type="text"
+        placeholder="Grand Theft..."
       />
       <button
         type="submit"
