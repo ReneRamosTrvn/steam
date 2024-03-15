@@ -1,13 +1,7 @@
 <script setup>
-import { RouterLink, RouterView, useRouter } from "vue-router";
+import { RouterView } from "vue-router";
 import SideBar from "./components/SideBar.vue";
 import Topbar from "./components/Topbar.vue";
-
-const router = useRouter();
-
-function goBack() {
-  router.go(-1);
-}
 </script>
 
 <template>

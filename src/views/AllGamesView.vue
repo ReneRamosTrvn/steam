@@ -51,7 +51,6 @@ function fetchGames() {
     })
     .then((response) => {
       games.value = response.data.results;
-      console.log(games.value);
       loading.value = false;
     })
     .catch((error) => {
@@ -68,7 +67,6 @@ function searchGame(game) {
     )
     .then((response) => {
       games.value = response.data.results;
-      console.log(games.value);
       loading.value = false;
     })
     .catch((error) => {

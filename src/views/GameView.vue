@@ -38,10 +38,11 @@
           <div class="grid grid-cols-3">
             <button
               v-for="(tab, index) in tabs"
+              type="button"
               :key="index"
               class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
-              v-on:click="toggleTabs(index + 1)"
-              v-bind:class="{
+              @click="toggleTabs(index + 1)"
+              :class="{
                 'text-slate-400 ': openTab !== index + 1,
                 'text-white bg-slate-800': openTab === index + 1,
               }"
@@ -53,7 +54,7 @@
             <div class="lg:px-4 py-5 flex-auto">
               <div class="tab-content tab-space">
                 <div
-                  v-bind:class="{
+                  :class="{
                     hidden: openTab !== 1,
                     block: openTab === 1,
                   }"
@@ -64,7 +65,7 @@
                   ></p>
                 </div>
                 <div
-                  v-bind:class="{
+                  :class="{
                     hidden: openTab !== 2,
                     block: openTab === 2,
                   }"
@@ -97,7 +98,7 @@
                   </div>
                 </div>
                 <div
-                  v-bind:class="{
+                  :class="{
                     hidden: openTab !== 3,
                     block: openTab === 3,
                   }"
@@ -137,16 +138,16 @@ import GameMetacritic from "../components/GameMetacritic.vue";
 
 const game = ref("");
 let gameId = useRoute();
-const loading = ref(true);
+const loading = ref(false);
 let openTab = ref(1);
 const tabs = ["Description", "Critics", "Buy"];
 
 onMounted(() => {
   fetchGame();
-  fetchGameTrailer();
 });
 
 function fetchGame() {
+  loading.value = true;
   axios
     .get(
       `https://api.rawg.io/api/games/${gameId.params.id}?key=b7c5c6b89bcf4a3093097d8eba0f708a`
@@ -154,20 +155,6 @@ function fetchGame() {
     .then((response) => {
       game.value = response.data;
       loading.value = false;
-      console.log(game.value);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-}
-
-function fetchGameTrailer() {
-  axios
-    .get(
-      `https://api.rawg.io/api/games/${gameId.params.id}/movies?key=b7c5c6b89bcf4a3093097d8eba0f708a`
-    )
-    .then((response) => {
-      console.log(response.data);
     })
     .catch((error) => {
       console.error(error);
@@ -175,6 +162,6 @@ function fetchGameTrailer() {
 }
 
 function toggleTabs(tabNumber) {
-  this.openTab = tabNumber;
+  openTab.value = tabNumber;
 }
 </script>

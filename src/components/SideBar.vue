@@ -22,14 +22,6 @@
           icon="pi-heart"
           path="/popular"
         />
-        <!-- <ul class="border-y border-slate-800 py-5 my-5">
-          <ul v-for="section in sections">
-            <p class="text-xl font-semibold text-left px-5 my-5">
-              {{ section.title }}
-            </p>
-            <SideList :items="section.items" />
-          </ul>
-        </ul> -->
       </div>
       <div v-if="route.name != 'home'">
         <div class="text-slate-200 font-light text-center my-10">
@@ -91,68 +83,7 @@
 
 <script setup>
 import SideButton from "./SideButton.vue";
-import SideList from "./SideList.vue";
-import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
-
-onMounted(() => {
-  console.log(route.name);
-});
-
-const sections = [
-  {
-    title: "Platforms",
-    items: [
-      {
-        name: "Play Station 5",
-        icon: "pi-sort-up",
-      },
-      {
-        name: "Xbox Series S/X",
-        icon: "pi-microsoft",
-      },
-      {
-        name: "PC",
-        icon: "pi-microsoft",
-      },
-    ],
-  },
-  {
-    title: "Developers",
-    items: [
-      {
-        name: "Bethesda",
-      },
-      {
-        name: "EA",
-      },
-      {
-        name: "Activision",
-      },
-    ],
-  },
-  {
-    title: "New Releases",
-    items: [
-      {
-        name: "Last 30 days",
-        icon: "pi-backward",
-      },
-      {
-        name: "This Week",
-        icon: "pi-star",
-      },
-      {
-        name: "Next Week",
-        icon: "pi-forward",
-      },
-      {
-        name: "Release Calendar",
-        icon: "pi-calendar",
-      },
-    ],
-  },
-];
 </script>
