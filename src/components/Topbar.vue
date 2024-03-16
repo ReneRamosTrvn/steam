@@ -12,13 +12,13 @@
       />
       <SideButton
         class="text-white"
-        text-button="All games"
+        text-button="Games"
         icon="pi-bars"
         path="/all-games"
       />
       <SideButton
         class="text-white"
-        text-button="Popular 2024"
+        text-button="Popular"
         icon="pi-heart"
         path="/popular"
       />

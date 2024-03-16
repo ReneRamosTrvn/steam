@@ -32,13 +32,13 @@
           </div>
         </div>
         <div class="mt-5 grid grid-cols-3 text-center w-full mb-10">
-          <a href="https://www.linkedin.com/in/reneramosdev/"
+          <a target="_blank" href="https://www.linkedin.com/in/reneramosdev/"
             ><i class="pi pi-linkedin auto" style="font-size: 1.5rem"></i
           ></a>
-          <a href="mailto:reneramostrvn@gmail.com"
+          <a target="_blank" href="mailto:reneramostrvn@gmail.com"
             ><i class="pi pi-inbox auto" style="font-size: 1.5rem"></i
           ></a>
-          <a href="https://github.com/ReneRamosTrvn/">
+          <a target="_blank" href="https://github.com/ReneRamosTrvn/">
             <i class="pi pi-github auto" style="font-size: 1.5rem"></i>
           </a>
         </div>
