@@ -9,13 +9,21 @@
       ></div>
       <div
         v-if="!loading"
-        class="mx-10 rounded-xl bg-gradient-to-t from-slate-900 to-slate-950 w-full h-40 flex items-center justify-center"
+        class="text-center px-2 lg:px-0 mx-10 rounded-xl bg-gradient-to-t from-slate-900 to-slate-950 w-full h-40 flex items-center justify-center"
       >
         <h1 class="text-slate-200 font-black text-5xl">
           Most popular games in 2024
         </h1>
       </div>
-      <GameCard :games="games" />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <GameCard
+          v-if="games && !loading"
+          v-for="(game, index) in games"
+          :key="index"
+          :game="game"
+          class="m-2"
+        />
+      </div>
     </div>
   </main>
 </template>
